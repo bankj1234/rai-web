@@ -8,6 +8,7 @@ const BREADCRUMB_LABELS = {
   workspace: 'Workspaces List',
   workspaceDetail: 'Workspace Detail',
   createTestSet: 'Create Test Set',
+  testSetDetail: 'Test Set Detail',
   environments: 'Environment List',
   environmentDetail: 'Environment Detail',
   createEnvironment: 'Create Environment',
@@ -42,6 +43,15 @@ const getWorkspaceBreadcrumbs = (
   pathname: string,
   segments: string[]
 ): BreadcrumbItem[] => {
+  // /workspace/:id/test-set/:testSetId
+  if (matchesPattern(pathname, /^\/workspace\/[^/]+\/test-set\/[^/]+$/)) {
+    return [
+      { label: BREADCRUMB_LABELS.workspace, href: PATHS.workspace },
+      { label: 'Test Sets List', href: `/workspace/${segments[1]}` },
+      { label: BREADCRUMB_LABELS.testSetDetail },
+    ]
+  }
+
   // /workspace/:id/create-test-set
   if (matchesPattern(pathname, /^\/workspace\/[^/]+\/create-test-set$/)) {
     return [

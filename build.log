@@ -1,0 +1,44 @@
+
+> nextjs-template@0.1.0 prebuild
+> rimraf .next
+
+
+> nextjs-template@0.1.0 build
+> next build
+
+   ▲ Next.js 15.0.3
+   - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/8) ...
+   Generating static pages (2/8) 
+   Generating static pages (4/8) 
+   Generating static pages (6/8) 
+ ✓ Generating static pages (8/8)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    261 kB          415 kB
+├ ○ /_not-found                          902 B           101 kB
+├ ƒ /api/auth/[...nextauth]              139 B           100 kB
+├ ○ /main-page                           364 B           106 kB
+├ ○ /sample-page                         139 B           100 kB
+├ ○ /signin                              50.6 kB         230 kB
+├ ○ /workspace                           33.5 kB         143 kB
+├ ƒ /workspace/[id]                      2.35 kB         112 kB
+└ ƒ /workspace/[id]/create-test-set      1.59 kB         111 kB
++ First Load JS shared by all            100 kB
+  ├ chunks/4bd1b696-84e27f2641eb4d1c.js  52.5 kB
+  ├ chunks/517-d4e043ae9b11f405.js       45.8 kB
+  └ other shared chunks (total)          1.92 kB
+
+
+ƒ Middleware                             31.8 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
